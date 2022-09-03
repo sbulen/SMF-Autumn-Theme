@@ -1,0 +1,16 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24">
+	<style><![CDATA[
+		:root {
+			--cc_secondary_color: transparent;
+		}
+		line {
+			stroke: var(--cc_secondary_color);
+			stroke-width: 2.5;
+			stroke-linecap: round;
+			opacity: 1.0;
+		}]]>
+	</style>
+	<line x1="6" y1="7" x2="18" y2="7"/>
+	<line x1="6" y1="12" x2="18" y2="12"/>
+	<line x1="6" y1="17" x2="18" y2="17"/>
+</svg>

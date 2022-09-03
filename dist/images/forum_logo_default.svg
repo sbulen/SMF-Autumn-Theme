@@ -1,0 +1,40 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 75" role="banner" aria-labelledby="ariatitle">
+	<style><![CDATA[
+		:root {
+			--cc_special_titles_color: transparent;
+			--cc_primary_color: transparent;
+			--cc_secondary_color: transparent;
+			--cc_borders_color_color: transparent;
+			--cc_foreground: transparent;
+			--cc_background: transparent;
+		}
+		.title_text {
+			font: 54px serif;
+			fill: var(--cc_special_titles_color);
+			background: transparent;
+
+			paint-order: stroke;
+			stroke: var(--cc_borders_color);
+			stroke-width: 2px;
+			stroke-linecap: butt;
+			stroke-linejoin: miter;
+			font-weight: 1000;
+
+			dominant-baseline: middle;
+			text-anchor: middle;
+		}
+		.paths {
+			fill: var(--cc_background);
+			stroke: var(--cc_borders_color);
+			stroke-width: 3;
+		}
+		.bkg {
+			fill: transparent;
+			width: 100%;
+			height: 100%;
+		}]]>
+	</style>
+	<title id="ariatitle" class="smf_mbname_text">Forum Name</title>
+	<rect class="bkg"/>
+	<text x="50%" y="60%" class="smf_mbname_text title_text">Forum Name</text>
+</svg>
