@@ -1,4 +1,4 @@
-# Blue Mood
+# Autumn
 
 ## Overview:
 Autumn is a warm theme, depicting lazily falling leaves in a light breeze in early evening light.
