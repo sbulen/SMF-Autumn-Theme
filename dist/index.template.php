@@ -93,7 +93,7 @@ function template_init()
 			'links' => '#334466',
 			'locked_topic' => '#d0d6df',
 			'primary_color' => '#f5bf85',
-			'secondary_color' => '#ebbf85',
+			'secondary_color' => '#e9b774',
 			'special_titles_color' => '#cc6600',
 			'sticky_locked_topic' => '#e8d8cf',
 			'sticky_topic' => '#c6d6e3',
