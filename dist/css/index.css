@@ -1,5 +1,4 @@
 /* You can find detailed information at https://wiki.simplemachines.org/smf/Curve2_CSS
-
 /* Index */
 html {
 	background: var(--cc_footer);
@@ -700,13 +699,13 @@ img.sort, .sort {
 	z-index: 100;
 }
 .auto_suggest_item {
-	background: #ddd;
+	background: var(--cc_blocks_color);
 	padding: 1px 4px;
 }
 .auto_suggest_item_hover {
-	background: #888;
+	background: var(--cc_blocks_alternate_color);
 	cursor: pointer;
-	color: #eee;
+	color: var(--cc_foreground_color);
 	padding: 1px 4px;
 }
 
@@ -2242,7 +2241,7 @@ tr.windowbg td, tr.bg td, .table_grid tr td {
 	border-radius: 4px;
 	text-align: center;
 	font-weight: bold;
-	color: rgba(0, 0, 0, 0.8);
+	color: var(--cc_links);
 }
 .progress_bar .bar {
 	box-shadow: -1px 1px 0 rgba(255, 255, 255, 0.25) inset,
@@ -3471,16 +3470,35 @@ img.smiley {
 }
 .attachments {
 	padding: 12px 0 0 0;
+	display: flex;
+	flex-flow: row wrap;
 }
 .attached {
 	padding: 0 6px 8px 6px;
 	max-width: 100%;
-	display: inline-block;
-	vertical-align: top;
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	align-items: center;
+	margin-right: 10px;
 }
 .attachments_top {
 	margin: 0 auto;
 	text-align: center;
+	flex: 1 1 auto;
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+}
+.attachments_bot {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	max-width: 100%;
+}
+.attachments_bot a,
+.attachments_bot .name,
+.attachments_info .name, {
+	white-space: nowrap;
 }
 .attachments hr {
 	clear: both;
@@ -3558,7 +3576,7 @@ ul.post_options li {
 #post_additional_options .progress_bar {
 	height: 22px;
 }
-#post_settings, #postAttachment, #postAttachment2, #attachment_previews {
+#post_settings {
 	padding: 10px 0;
 }
 #postAttachment dd, #postAttachment2 dd {
@@ -3851,14 +3869,14 @@ p.information img {
 	z-index: 11110 !important;
 }
 .atwho-view .cur {
-	background: #3366ff;
-	color: var(--cc_foreground);
+	background: var(--cc_blocks_color);
+	color: var(--cc_links);
 }
 .atwho-view .cur small {
-	color: var(--cc_foreground);
+	color: var(--cc_links);
 }
 .atwho-view strong {
-	color: #3366ff;
+	color: var(--cc_links);
 }
 .atwho-view .cur strong {
 	color: var(--cc_foreground);
@@ -3877,7 +3895,7 @@ p.information img {
 }
 .atwho-view small {
 	font-size: smaller;
-	color: #777;
+	color: var(--cc_foreground);
 	font-weight: normal;
 }
 /* On/Off Icons (User) */
@@ -3925,6 +3943,7 @@ p.information img {
 	margin-top: -1px !important;
 }
 span.member.hidden {
+	display: inline-block;
 	font-style: italic;
 }
 
@@ -4062,33 +4081,112 @@ h3.profile_hd::before,
 	transform: translate(-50%, -50%);
 }
 
-.dz-image-preview {
+#post_attachments_area {
+	background: var(--cc_blocks_color);
+	overflow: auto;
+	border: 1px solid var(--cc_borders_color);
+	border-top: none;
+	border-radius: 0 0 7px 7px;
+	margin: 0 0 10px 0;
+}
+#postAttachment .attachments {
+	padding: 0;
+	border-top: none;
+	box-shadow: none;
+}
+#postAttachment .attached {
+	border-right: 1px dotted var(--cc_borders_color);
+	border-top: 1px dotted var(--cc_borders_color);
+	padding-top: 9px;
+	width: 200px;
+	position: relative;
+}
+#postAttachment input {
+	line-height: initial;
+}
+#postAttachment .attached input[type="checkbox"] {
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+.attachment_spacer {
+	display: flex;
+	flex-flow: column;
+	flex: 1 1 200px;
+	min-width: 200px;
+	order: 9999;
+}
+.attach_drop_zone_label {
+	font-weight: bold;
+	margin: auto;
+	width: 100%;
+}
+.attachment_restrictions {
+	flex: 0 0 auto;
 	display: flex;
 	flex-flow: row wrap;
-	justify-content: space-between;
+	justify-content: center;
+}
+.attachment_restrictions > * {
+	margin: 0 2ch;
+}
+.dz-image-preview {
+	flex: 1 0 auto;
+	width: 200px;
+	display: flex;
+	flex-flow: column;
 	align-items: center;
-	margin-top: 12px;
+	justify-content: center;
+	overflow: hidden;
+	position: relative;
+	padding: 5px;
 }
 #attachment_previews {
-    display: none;
+	display: none;
+	flex-flow: row wrap;
+	justify-content: space-evenly;
 }
-#attachment_previews div.descbox > div,
-#attachment_previews div.errorbox > div,
-#attachment_previews div.infobox > div {
-	padding: 10px;
+#attachment_previews div.descbox,
+#attachment_previews div.errorbox,
+#attachment_previews div.infobox {
+	margin: 0;
+}
+#attachment_previews div.descbox .attach-preview,
+#attachment_previews div.errorbox .attach-preview,
+#attachment_previews div.infobox .attach-preview {
+	display: none;
+}
+#attachment_previews div.descbox .attachment_info,
+#attachment_previews div.errorbox .attachment_info,
+#attachment_previews div.infobox .attachment_info {
+	padding: 10px 10px 10px 26px;
 }
 #attachment_previews .attach-preview {
-	flex: 0 0 auto;
-	width: 170px;
+	flex: 1 1 auto;
+	display: flex;
+	justify-content: center;
+	margin: 0.5em 0;
+	max-height: 200px;
+}
+#attachment_previews .attach-preview img {
+	object-fit: contain;
 }
 #attachment_previews .attachment_info {
-	flex: 1 1 auto;
-	width: 250px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	max-width: 100%;
+}
+#attachment_previews .attachment_info span:not(:first-child)::before {
+	display: block;
+	content: "";
 }
 #attachment_previews .attach-ui {
-	min-height: 36px;
-	padding: 10px 0;
-	float: right;
+	position: absolute;
+	right: 5px;
+	top: 5px;
+	background: var(--cc_primary_color);
+	border-radius: 4px;
+	padding: 0.5ch;
 }
 input[name="attachBBC"] {
 	width: 100%;
@@ -4100,29 +4198,51 @@ input[name="attachBBC"] {
 .attachment_info .progress_bar {
 	margin: 6px 0;
 }
+.attached_BBC_width_height {
+	display: none;
+	clear: both;
+}
 .attached_BBC_width_height label {
 	min-width: 100px;
 	display: inline-block;
 }
 .attached_BBC_width, .attached_BBC_height {
-	margin: 10px 1em 0 0;
-	display: inline-block;
+	padding: 5px 0;
 }
 .attachment_info input[type="number"] {
 	width: 5em;
 }
 #attachment_upload {
-	min-height: 50px;
+	border: 2px dashed transparent;
+	border-radius: 5px;
+}
+#attachment_upload.dz-drag-hover {
+	border-color: var(--cc_borders_color);
+}
+.dz-clickable {
+	cursor: pointer;
 }
 #drop_zone_ui {
 	display: none;
+	min-width: 100%;
+	flex-flow: row wrap;
+	padding: 5px;
 }
 #total_progress {
 	width: 50%;
 	display: none;
 }
-#max_files_progress, #max_files_progress_text {
+#max_files_progress {
 	display: none;
+	border-radius: 0;
+	border-left: none;
+	border-right: none;
+	border-bottom: none;
+}
+#max_files_progress_text {
+	display: none;
+	position: relative;
+	z-index: 1;
 }
 
 /* Hide this from desktop users sshh... our little sekrit */
@@ -4132,7 +4252,7 @@ input[name="attachBBC"] {
 
 /* Two-Factor Auth code container */
 .tfacode {
-	background: #d0e7f8;
+	background: var(--cc_background);
 	padding: 5px;
 	display: inline-block;
 }
@@ -4209,7 +4329,7 @@ tr[id^='list_news_lists_'] textarea {
 }
 .videocontainer video {
 	object-fit: contain;
-	background: black;
+	background: var(--cc_background);
 	max-width: 100%;
 }
 
