@@ -944,20 +944,6 @@ a[class^="mobile_generic_menu_"] {
 .top_menu .login input {
 	width: 90%;
 }
-/* Note: The next declarations are for keyboard access with js disabled. */
-.dropmenu ul a:focus, .dropmenu ul ul a:focus {
-	margin-left: 9990px;
-	border: none;
-	width: 17em;
-}
-.dropmenu ul ul a:focus {
-	margin-left: 19950px;
-}
-/* Cancel those for hover and/or js access. */
-.dropmenu ul li:hover a:focus, .dropmenu ul li a:focus {
-	margin-left: 0;
-	width: auto;
-}
 /* Level 3 submenu wrapper positioning. */
 .dropmenu li ul ul {
 	margin: -2em 0 0 15.3em;
@@ -1351,14 +1337,6 @@ ul li.greeting {
 .mark_read .buttonlist {
 	margin: 0;
 	padding: 0;
-}
-
-/* the small stats */
-#index_common_stats {
-	margin: -4px 8px 6px 8px;
-	padding: 4px 0 0 0;
-	font-size: 0.9em;
-	border-top: 1px solid var(--cc_borders_color);
 }
 
 .fix_rtl_names {
@@ -3470,35 +3448,16 @@ img.smiley {
 }
 .attachments {
 	padding: 12px 0 0 0;
-	display: flex;
-	flex-flow: row wrap;
 }
 .attached {
 	padding: 0 6px 8px 6px;
 	max-width: 100%;
-	display: flex;
-	flex-flow: column;
-	justify-content: center;
-	align-items: center;
-	margin-right: 10px;
+	display: inline-block;
+	vertical-align: top;
 }
 .attachments_top {
 	margin: 0 auto;
 	text-align: center;
-	flex: 1 1 auto;
-	display: flex;
-	flex-flow: column;
-	justify-content: center;
-}
-.attachments_bot {
-	overflow: hidden;
-	text-overflow: ellipsis;
-	max-width: 100%;
-}
-.attachments_bot a,
-.attachments_bot .name,
-.attachments_info .name, {
-	white-space: nowrap;
 }
 .attachments hr {
 	clear: both;
@@ -3576,7 +3535,7 @@ ul.post_options li {
 #post_additional_options .progress_bar {
 	height: 22px;
 }
-#post_settings {
+#post_settings, #postAttachment, #postAttachment2, #attachment_previews {
 	padding: 10px 0;
 }
 #postAttachment dd, #postAttachment2 dd {
@@ -4081,112 +4040,33 @@ h3.profile_hd::before,
 	transform: translate(-50%, -50%);
 }
 
-#post_attachments_area {
-	background: var(--cc_blocks_color);
-	overflow: auto;
-	border: 1px solid var(--cc_borders_color);
-	border-top: none;
-	border-radius: 0 0 7px 7px;
-	margin: 0 0 10px 0;
-}
-#postAttachment .attachments {
-	padding: 0;
-	border-top: none;
-	box-shadow: none;
-}
-#postAttachment .attached {
-	border-right: 1px dotted var(--cc_borders_color);
-	border-top: 1px dotted var(--cc_borders_color);
-	padding-top: 9px;
-	width: 200px;
-	position: relative;
-}
-#postAttachment input {
-	line-height: initial;
-}
-#postAttachment .attached input[type="checkbox"] {
-	position: absolute;
-	right: 0;
-	top: 0;
-}
-.attachment_spacer {
-	display: flex;
-	flex-flow: column;
-	flex: 1 1 200px;
-	min-width: 200px;
-	order: 9999;
-}
-.attach_drop_zone_label {
-	font-weight: bold;
-	margin: auto;
-	width: 100%;
-}
-.attachment_restrictions {
-	flex: 0 0 auto;
+.dz-image-preview {
 	display: flex;
 	flex-flow: row wrap;
-	justify-content: center;
-}
-.attachment_restrictions > * {
-	margin: 0 2ch;
-}
-.dz-image-preview {
-	flex: 1 0 auto;
-	width: 200px;
-	display: flex;
-	flex-flow: column;
+	justify-content: space-between;
 	align-items: center;
-	justify-content: center;
-	overflow: hidden;
-	position: relative;
-	padding: 5px;
+	margin-top: 12px;
 }
 #attachment_previews {
-	display: none;
-	flex-flow: row wrap;
-	justify-content: space-evenly;
+    display: none;
 }
-#attachment_previews div.descbox,
-#attachment_previews div.errorbox,
-#attachment_previews div.infobox {
-	margin: 0;
-}
-#attachment_previews div.descbox .attach-preview,
-#attachment_previews div.errorbox .attach-preview,
-#attachment_previews div.infobox .attach-preview {
-	display: none;
-}
-#attachment_previews div.descbox .attachment_info,
-#attachment_previews div.errorbox .attachment_info,
-#attachment_previews div.infobox .attachment_info {
-	padding: 10px 10px 10px 26px;
+#attachment_previews div.descbox > div,
+#attachment_previews div.errorbox > div,
+#attachment_previews div.infobox > div {
+	padding: 10px;
 }
 #attachment_previews .attach-preview {
-	flex: 1 1 auto;
-	display: flex;
-	justify-content: center;
-	margin: 0.5em 0;
-	max-height: 200px;
-}
-#attachment_previews .attach-preview img {
-	object-fit: contain;
+	flex: 0 0 auto;
+	width: 170px;
 }
 #attachment_previews .attachment_info {
-	overflow: hidden;
-	text-overflow: ellipsis;
-	max-width: 100%;
-}
-#attachment_previews .attachment_info span:not(:first-child)::before {
-	display: block;
-	content: "";
+	flex: 1 1 auto;
+	width: 250px;
 }
 #attachment_previews .attach-ui {
-	position: absolute;
-	right: 5px;
-	top: 5px;
-	background: var(--cc_primary_color);
-	border-radius: 4px;
-	padding: 0.5ch;
+	min-height: 36px;
+	padding: 10px 0;
+	float: right;
 }
 input[name="attachBBC"] {
 	width: 100%;
@@ -4198,51 +4078,29 @@ input[name="attachBBC"] {
 .attachment_info .progress_bar {
 	margin: 6px 0;
 }
-.attached_BBC_width_height {
-	display: none;
-	clear: both;
-}
 .attached_BBC_width_height label {
 	min-width: 100px;
 	display: inline-block;
 }
 .attached_BBC_width, .attached_BBC_height {
-	padding: 5px 0;
+	margin: 10px 1em 0 0;
+	display: inline-block;
 }
 .attachment_info input[type="number"] {
 	width: 5em;
 }
 #attachment_upload {
-	border: 2px dashed transparent;
-	border-radius: 5px;
-}
-#attachment_upload.dz-drag-hover {
-	border-color: var(--cc_borders_color);
-}
-.dz-clickable {
-	cursor: pointer;
+	min-height: 50px;
 }
 #drop_zone_ui {
 	display: none;
-	min-width: 100%;
-	flex-flow: row wrap;
-	padding: 5px;
 }
 #total_progress {
 	width: 50%;
 	display: none;
 }
-#max_files_progress {
+#max_files_progress, #max_files_progress_text {
 	display: none;
-	border-radius: 0;
-	border-left: none;
-	border-right: none;
-	border-bottom: none;
-}
-#max_files_progress_text {
-	display: none;
-	position: relative;
-	z-index: 1;
 }
 
 /* Hide this from desktop users sshh... our little sekrit */
