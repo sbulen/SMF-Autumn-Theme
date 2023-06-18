@@ -188,7 +188,7 @@ input[disabled], textarea[disabled], select[disabled], .button.disabled, .button
 hr {
 	border: none;
 	margin: 12px 0;
-	height: 2px;
+	height: 1px;
 	background: var(--cc_borders_color);
 	box-shadow: 0 1px 0 #bbb inset;
 }
@@ -578,9 +578,9 @@ a.moderation_link, a.moderation_link:visited {
 /* AJAX notification bar
 ------------------------------------------------------- */
 #ajax_in_progress {
-	background: var(--cc_foreground);
-	border-bottom: 4px solid #f96f00;
-	color: #f96f00;
+	background: var(--cc_background);
+	border-bottom: 4px solid var(--cc_borders_color);
+	color: var(--cc_foreground);
 	text-align: center;
 	font-size: 1.6em;
 	padding: 8px;
@@ -1009,7 +1009,7 @@ a[class^="mobile_generic_menu_"] {
 	cursor: pointer;
 	min-height: calc(2em + 2em * (0.9 - 0.85)); /* "input" font size minus ".button" font size */
 	border: 1px solid;
-	border-color: #ddd #bbb #aaa #ddd;
+	border-color: var(--cc_buttons_border);
 	border-radius: 3px;
 	box-shadow: 1px 1px 1px rgba(221, 221, 221, 0.57);
 	box-sizing: border-box;
@@ -1029,12 +1029,12 @@ html[lang="el-GR"] .inline_mod_check {
 .button:hover, .button:focus,
 .quickbuttons > li:hover > a, .quickbuttons > li > a:focus {
 	color: #222;
-	border-color: #aaa #ddd #ddd #bbb;
+	border-color: var(--cc_buttons_border);
 	box-shadow: -1px -1px 2px rgba(221, 221, 221, 0.7), -1px -2px 4px #ddd inset;
 	text-decoration: none;
 }
 .button:hover, .button:focus {
-	color: #af6700;
+	color: var(--cc_special_titles_color);
 }
 /* the active one */
 .button.active {
@@ -1045,7 +1045,7 @@ html[lang="el-GR"] .inline_mod_check {
 	text-shadow: 0 0 1px #000;
 }
 .button.active:hover, .button.active:focus {
-	color: #ffc187;
+	color: var(--cc_special_titles_color);
 	background: var(--cc_primary_color);
 	box-shadow: none;
 }
@@ -2122,8 +2122,8 @@ tr.windowbg td, tr.bg td, .table_grid tr td {
 }
 .errorbox {
 	background-color: var(--cc_top_section);
-	border-top: 2px solid #c34;
-	border-bottom: 2px solid #c34;
+	border-top: 2px solid var(--cc_borders_color);
+	border-bottom: 2px solid var(--cc_borders_color);
 }
 .errorbox h3 {
 	padding: 0;
@@ -2157,8 +2157,8 @@ tr.windowbg td, tr.bg td, .table_grid tr td {
 .noticebox {
 	color: #666;
 	background: #fff6ca;
-	border-top: 1px solid #ffd324;
-	border-bottom: 1px solid #ffd324;
+	border-top: 1px solid var(--cc_borders_color);
+	border-bottom: 1px solid var(--cc_borders_color);
 }
 .infobox {
 	color: var(--cc_foreground);
@@ -2455,7 +2455,7 @@ dl {
 }
 .boardslist a {
 	font-weight: bold;
-	border-bottom: 1px solid #c4c4c4;
+	border-bottom: 1px solid var(--cc_borders_color);
 	display: block;
 	margin-bottom: 0.5em;
 }
@@ -2787,8 +2787,8 @@ dl.addrules dt.floatleft {
 	max-width: 350px;
 	padding: 6px 9px;
 	color: #333;
-	background: var(--cc_foreground);
-	border: 1px solid #aaa;
+	background: var(--cc_background);
+	border: 1px solid var(--cc_borders_color);
 	border-radius: 4px;
 	box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.2), 0 0px 10px rgba(0, 0, 0, 0.05) inset;
 }
@@ -3406,7 +3406,7 @@ img.avatar {
 	flex: 1 1 auto;
 }
 .keyinfo .postinfo .modified {
-	color: #333;
+	color: var(--cc_links);
 	font-weight: normal;
 	font-style: italic;
 	padding: 2px 4px 0 4px;
@@ -3550,14 +3550,14 @@ ul.post_options li {
 }
 #post_draft_options {
 	background: var(--cc_blocks_alternate_color);
-	border: 1px solid #aaa;
-	border-left: 1px solid #bbb;
+	border: 1px solid var(--cc_blocks_alternate_color);
+	border-left: 1px solid var(--cc_blocks_alternate_color);
 	border-top: none;
 	border-radius: 0 0 4px 4px;
 }
 #post_draft_options .settings dd, #post_draft_options .settings dt {
 	width: 50%;
-	border-top: 1px solid #e4e4e4;
+	border-top: 1px solid var(--cc_borders_color);
 	padding: 5px 10px;
 	margin: 0;
 }
@@ -3565,7 +3565,7 @@ ul.post_options li {
 	border-top: none; /* Some people are OCD, like me. :P */
 }
 #post_draft_options .settings strong {
-	color: #555;
+	color: var(--cc_foreground_color);
 }
 #post_confirm_buttons {
 	display: flex;
@@ -3678,7 +3678,7 @@ ul.post_options li {
 /* Cat_bar / catbg */
 div.cat_bar {
 	background: var(--cc_primary_color);
-	border-bottom: 1px solid #777;
+	border-bottom: 1px solid var(--cc_borders_color);
 	padding: 0;
 	border-radius: 6px 6px 0 0;
 	box-shadow: 0 16px 20px rgba(255, 255, 255, 0.15) inset;
@@ -3740,8 +3740,8 @@ h3.catbg .main_icons::before, h3.catbg .icon {
 .title_bar {
 	border-top: 2px solid var(--cc_secondary_color);
 	border-bottom: 2px solid var(--cc_secondary_color);
-	border-left: 1px solid var(--cc_borders_color);
-	border-right: 1px solid var(--cc_borders_color);
+	border-left: 1px solid var(--cc_blocks_alternate_color);
+	border-right: 1px solid var(--cc_blocks_alternate_color));
 	background: var(--cc_blocks_alternate_color);
 	color: var(--cc_foreground);
 	border-radius: 2px 2px 0 0;
@@ -3941,7 +3941,7 @@ h3.profile_hd::before,
 }
 /* Well some of them has different gradient effect on hover */
 .button:hover, #search_form .button:hover, .quickbuttons li:hover {
-	background: var(--cc_foreground);
+	background: var(--cc_buttons_bg);
 }
 /* If it fits I sits... */
 .navigate_section ul, .popup_content, .up_contain {

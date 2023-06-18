@@ -480,7 +480,7 @@ div.sceditor-toolbar {
 	overflow: hidden;
 	padding: 3px 5px 2px;
 	background: var(--cc_blocks_color);
-	border-bottom: 1px solid var(--cc_buttons_bg);
+	border-bottom: 1px solid var(--cc_borders_color);
 	line-height: 0;
 	text-align: left;
 	user-select: none;
