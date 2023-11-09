@@ -3741,7 +3741,7 @@ h3.catbg .main_icons::before, h3.catbg .icon {
 	border-top: 2px solid var(--cc_secondary_color);
 	border-bottom: 2px solid var(--cc_secondary_color);
 	border-left: 1px solid var(--cc_blocks_alternate_color);
-	border-right: 1px solid var(--cc_blocks_alternate_color));
+	border-right: 1px solid var(--cc_blocks_alternate_color);
 	background: var(--cc_blocks_alternate_color);
 	color: var(--cc_foreground);
 	border-radius: 2px 2px 0 0;
