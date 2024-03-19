@@ -38,14 +38,16 @@ $(function() {
 	// This label after all checkboxes guarantees that *ALL* checkboxes 
 	// are findable and changeable by .css, and selectable as well.
 	// If no ID, gotta create one.
+	// Don't want to make hidden elements appear; check for visibility.
 	$("input:checkbox, input:radio").each(function() {
 		let $id = this.id;
-		if ($id == "")
-		{
-			$id = "crid_" + Math.random().toString().substring(2, 15) + "_" + Math.random().toString().substring(2, 15);
-			this.id = $id;
+		if ((this.style.display !== "none") && (this.parentElement.style.display !== "none")) {
+			if ($id == "") {
+				$id = "crid_" + Math.random().toString().substring(2, 15) + "_" + Math.random().toString().substring(2, 15);
+				this.id = $id;
+			}
+			$("<label for='" + $id + "'></label>").insertAfter(this);
 		}
-		$("<label for='" + $id + "'></label>").insertAfter(this);
 	});
 
 	// Add a listener for the color pickers, for real-time display...
