@@ -41,12 +41,17 @@ $(function() {
 	// Don't want to make hidden elements appear; check for visibility.
 	$("input:checkbox, input:radio").each(function() {
 		let $id = this.id;
+		let $class = "";
 		if ((this.style.display !== "none") && (this.parentElement.style.display !== "none")) {
 			if ($id == "") {
 				$id = "crid_" + Math.random().toString().substring(2, 15) + "_" + Math.random().toString().substring(2, 15);
 				this.id = $id;
 			}
-			$("<label for='" + $id + "'></label>").insertAfter(this);
+			// Use same class as checkbox/radio button, so display values assigned by css affect both
+			if (this.className != "") {
+				$class = " class='" + this.className + "'";
+			}
+			$("<label for='" + $id + "'" + $class + "></label>").insertAfter(this);
 		}
 	});
 
