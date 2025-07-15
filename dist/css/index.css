@@ -838,7 +838,7 @@ a[class^="mobile_generic_menu_"] {
 	text-align: center;
 }
 .unread_notify:hover {
-	background: #eee;
+	background: var(--cc_blocks_color);
 	text-decoration: none;
 }
 .unread_notify:last-child {
