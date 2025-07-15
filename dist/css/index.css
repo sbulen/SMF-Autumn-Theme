@@ -1449,8 +1449,10 @@ ul li.greeting {
 #display_jump_to_select,
 #message_index_jump_to_select,
 #search_jump_to_select,
-#quick_mod_jump_to_select {
+#quick_mod_jump_to_select,
+#list_integration_hooks select {
 	width: 29ch;
+	overflow: hidden;
 }
 
 .quickModifyMargin {
@@ -2463,6 +2465,12 @@ dl {
 	text-decoration: none;
 	border-bottom: 1px solid var(--links);
 }
+.boardslist label {
+	display: inline-block;
+	text-indent: -3ch;
+	margin: 0 3ch;
+}
+
 #theme_settings {
 	overflow: auto;
 	margin: 0;
