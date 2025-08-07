@@ -79,7 +79,7 @@ legend {
 	border: none;
 }
 .search_results li a strong {
-	color: var(--cc_blocks_color);
+	color: var(--cc_links);
 }
 .search_results li p {
 	padding: 0 20px;
