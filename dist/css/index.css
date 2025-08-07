@@ -2471,7 +2471,6 @@ dl {
 }
 .boardslist label {
 	display: inline-block;
-	text-indent: -3ch;
 	margin: 0 3ch;
 }
 
