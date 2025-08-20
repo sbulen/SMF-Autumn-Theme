@@ -2,10 +2,7 @@
 	<style><![CDATA[
 		:root {
 			--cc_special_titles_color: transparent;
-			--cc_primary_color: transparent;
-			--cc_secondary_color: transparent;
-			--cc_borders_color_color: transparent;
-			--cc_foreground: transparent;
+			--cc_borders_color: transparent;
 			--cc_background: transparent;
 		}
 		.title_text {
