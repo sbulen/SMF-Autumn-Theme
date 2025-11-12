@@ -37,3 +37,4 @@ This theme is, in part, a demo.  Theme designers should feel free to borrow code
  - v1.4 Fix stray checkbox bug
  - v1.5 2.1.5 & 2.1.6 updates; misc tweaks
  - v1.6 Minor fixes to contrast & checkbox alignment
+ - v1.7 Minor cleanup
